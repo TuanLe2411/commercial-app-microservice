@@ -9,7 +9,6 @@ import com.commercial.app.product_service.services.ProductService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
@@ -38,14 +37,16 @@ public class ProductController {
             .name(productCreateDto.getName())
             .price(productCreateDto.getPrice())
             .amount(productCreateDto.getAmount())
+            .shopId(productCreateDto.getShopId())
             .build();
         this.productService.execute(createNewProductCommand);
     }
 
     @PostMapping("/update-one/{product-id}")
     @ResponseStatus(HttpStatus.OK)
-    public void update(@PathVariable("product-id") @NotBlank String productId,
-                       @RequestBody @Valid ProductUpdateDto productUpdateDto
+    public void update(
+        @PathVariable("product-id") @NotBlank String productId,
+        @RequestBody @Valid ProductUpdateDto productUpdateDto
     ) throws JsonProcessingException {
         UpdateProductCommand updateProductCommand = UpdateProductCommand.builder()
             .category(productUpdateDto.getCategory())

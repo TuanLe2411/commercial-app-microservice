@@ -20,5 +20,8 @@ public class ProductCreateDto {
     @Min(1)
     @Digits(integer = 10, fraction = 0)
     @NotNull
-    private int amount;
+    private Integer amount;
+
+    @NotBlank
+    private String shopId;
 }

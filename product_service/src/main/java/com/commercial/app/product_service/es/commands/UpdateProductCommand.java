@@ -12,5 +12,5 @@ public class UpdateProductCommand {
     private String name;
     private String category;
     private String price;
-    private int amount;
+    private Integer amount;
 }

@@ -10,7 +10,7 @@ public class ProductUpdateDto {
     private String name;
     private String price;
 
-    @Min(1)
+    @Min(0)
     @Digits(integer = 10, fraction = 0)
-    private int amount;
+    private Integer amount;
 }

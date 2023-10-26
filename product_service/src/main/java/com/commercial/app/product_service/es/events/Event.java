@@ -5,6 +5,8 @@ import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import jakarta.persistence.*;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import java.util.Date;
 
 @Entity
@@ -13,6 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "events")
+@EntityListeners(AuditingEntityListener.class)
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
