@@ -22,6 +22,5 @@ public class ProductUpdatedHandler {
         Product currentProduct = this.productRepository.findOneById(productId);
         currentProduct.updateFromEvent(productUpdatedEventDto);
         this.productRepository.save(currentProduct);
-        System.out.println("success");
     }
 }
