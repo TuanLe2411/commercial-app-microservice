@@ -10,5 +10,4 @@ public class EsEventSyncServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(EsEventSyncServiceApplication.class, args);
     }
-
 }
