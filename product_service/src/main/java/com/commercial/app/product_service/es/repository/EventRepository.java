@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EventRepository extends JpaRepository<Event, Long> {
-    Event save(Event event);
+    <S extends Event> S save(Event event);
     Event findTopByStreamIdOrderByVersionDesc(String streamId);
 }

@@ -6,8 +6,6 @@ import com.commercial.app.shop_service.models.Shop;
 import com.commercial.app.shop_service.repositories.ShopRepository;
 import com.commercial.app.shop_service.utils.ValueRandomGenerator;
 import jakarta.annotation.Nullable;
-import jakarta.validation.constraints.NotNull;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

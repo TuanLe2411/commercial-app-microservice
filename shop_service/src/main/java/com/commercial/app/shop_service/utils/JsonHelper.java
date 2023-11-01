@@ -11,7 +11,7 @@ public class JsonHelper {
         return ow.writeValueAsString(o);
     }
 
-    public static <T extends Object> T toObject(String input, Class parsedType) {
+    public static <T extends Object> T toObject(String input, Class<T> parsedType) {
         Gson gson = new Gson();
         return (T) gson.fromJson(input, parsedType);
     }
